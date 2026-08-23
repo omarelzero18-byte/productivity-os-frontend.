@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #34343f transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #34343f;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::selection {
+  background-color: rgba(242, 184, 75, 0.28);
+  color: #f7cd74;
+}
+
+.halo-glow {
+  position: relative;
+}
+
+.halo-glow::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(242, 184, 75, 0.22) 0%, transparent 70%);
+  filter: blur(24px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
